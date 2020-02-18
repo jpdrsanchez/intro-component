@@ -1,0 +1,292 @@
+/* ==========================================================================
+   Intro component with sign up form | Challenge by: Fronend Mentor
+   ========================================================================== */
+
+/* Global Properties
+   ========================================================================== */
+
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+}
+
+/* 
+ * 1rem = 10px
+ */
+
+html {
+  font-size: 62.5%;
+}
+
+body, form, form > * {
+  color: hsl(249, 10%, 26%);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* 
+ * Responsive images
+ */
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Grid
+   ========================================================================== */
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 375px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  position: relative;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* Main
+   ========================================================================== */
+
+.main {
+  align-items: center;
+  background-image: url(../images/bg-intro-desktop.png);
+  background-color: hsl(0, 100%, 74%);
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.main__container {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main__content {
+  color: #fff;
+  flex: 1 1 100%;
+  padding-top: 12rem;
+}
+
+@media (min-width: 769px) {
+  .main__content {
+    flex: 1 1 calc(50% - 1.5rem);
+    padding-right: 1.5rem;
+    padding-top: 0;
+  }
+}
+
+.main__title {
+  font-size: 2.4rem;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+@media (min-width: 769px) {
+  .main__title {
+    font-size: 4.8rem;
+    text-align: left;
+  }
+}
+
+.main__text {
+  text-align: center;
+}
+
+@media (min-width: 769px) {
+  .main__text {
+    text-align: initial;
+  }
+}
+
+
+.main__sing-up {
+  flex: 1 1 100%;
+  padding-bottom: 12rem;
+  padding-top: 6rem;
+}
+
+@media (min-width: 769px) {
+  .main__sing-up {
+    flex: 1 1 calc(50% - 1.5rem);
+    padding-left: 1.5rem;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+}
+
+/* Form
+   ========================================================================== */
+
+.form {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 .7rem 0 rgba(0, 0, 0, .2);
+  padding: 3rem;
+}
+
+.form__item {
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.form__input {
+  border: .1rem solid rgba(62, 60, 73, .2);
+  border-radius: .5rem;
+  color: hsl(249, 10%, 26%);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  outline: 0;
+  padding: 1.5rem 2.5rem;
+  width: 100%;
+  transition: .2s linear;
+}
+
+.form__input--state--error {
+  background: url(../images/icon-error.svg) right 1.5rem center no-repeat;
+  border: .2rem solid hsl(0, 51%, 51%);
+}
+
+.form__input--state--error + .form__label {
+  display: none;
+}
+
+.form__input:focus {
+  border: .1rem solid hsl(248, 32%, 49%);
+}
+
+.form__input::placeholder {
+  color: hsl(0, 100%, 74%);;
+}
+
+.form__label {
+  background: #fff;
+  color: rgba(62, 60, 73, .7);
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 700;
+  left: 2.5rem;
+  padding: 0 .4rem;
+  position: absolute;
+  text-align: center;
+  top: 1.4rem;
+  transition: .2s linear;
+}
+
+.form__input:focus + .form__label {
+  color: hsl(248, 32%, 49%);
+  font-size: 1rem;
+  top: -.7rem;
+}
+
+.form__label--state--change {
+  font-size: 1rem;
+  top: -.7rem;
+}
+
+.form__error-message {
+  color: hsl(0, 100%, 74%);
+  display: none;
+  float: right;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.form__error-message--active {
+  display: block;
+}
+
+.form__text {
+  display: block;
+  color: rgba(62, 60, 73, .4);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Buttons
+   ========================================================================== */
+
+.button {
+  border: 0;
+  border-radius: 1rem;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  outline: 0;
+  padding: 1.5rem 1rem;
+  width: 100%;
+  transition: .3s linear;
+}
+
+.button--style--blue {
+  background: hsl(248, 32%, 49%);
+  box-shadow: 0 .7rem 0 rgba(0, 0, 0, .2);
+  margin-bottom: 2.5rem;
+}
+
+.button--style--blue:hover {
+  background: hsl(248, 45%, 59%);
+}
+
+.button--style--green {
+  background: hsl(154, 59%, 51%);
+  border-radius: .5rem;
+  box-shadow: 0 .4rem 0 rgb(42, 158, 108);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.button--style--green:hover {
+  background: hsl(154, 70%, 55%);
+}
+
+/* Miscellaneous
+   ========================================================================== */
+
+.bold {
+  font-weight: 600;
+}
+
+.red {
+  color: hsl(0, 100%, 74%);
+}
